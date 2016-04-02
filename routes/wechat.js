@@ -7,11 +7,16 @@ var config = {
 	encodingAESKey: 'B1dOEIDmw50nsE3rtnClD1BuaThITnX5VLeW96wsXrQ'
 };
 
+var options = {
+	encoding: 'utf8',
+	timeout: 0,
+	maxBuffer: 200*1024,
+	killSignal: 'SIGTERM',
+	cwd: '/home/pi'
+}
+
 module.exports = wechat(config, function (req, res, next) {
 	var message = req.weixin;
-
-    res.send(req.query.echostr);
-    return;
 
 	if (message.MsgType != 'text') {
 		res.reply('Only Text Message Accepted.');
@@ -21,12 +26,11 @@ module.exports = wechat(config, function (req, res, next) {
 });
 
 function execCommand(command, res){
-	exec(command, function(err, stdout, stderr){
-		if(err) {
-			console.log('get weather api error:'+stderr);
-			res.reply(stderr);
-			return;
-		}
+	console.log(command);
+	exec(command, options, function(err, stdout, stderr){
 		res.reply(stdout);
+		if(err) {
+			res.reply(stderr);
+		}
 	});
 }
