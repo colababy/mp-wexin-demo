@@ -41,7 +41,7 @@ module.exports = wechat(config, function (req, res, next) {
 			execCommand(command, res);
 			return;
 		}
-		res.reply('Unknown Command : ' + command);	
+		res.reply('Unknown Command : ' + command);
 	}
 });
 
