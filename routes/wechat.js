@@ -2,9 +2,9 @@ var exec = require('child_process').exec;
 var wechat = require('wechat');
 
 var config = {
-	token: 'superpi',
-	appid: 'wx1833a56d86b539c6',
-	encodingAESKey: 'B1dOEIDmw50nsE3rtnClD1BuaThITnX5VLeW96wsXrQ'
+	token: '微信后台配置的token',
+	appid: '微信公众号APPID',
+	encodingAESKey: '微信后台查看到的AESKey'
 };
 
 var options = {
