@@ -1,8 +1,8 @@
-# pi_weixin_server
-通过微信控制树莓派
+# nodejs_mp_wexin
+微信公众号开发Nodejs版demo
 
 ### 运行环境
-本工程使用nodejs开发，需要在树梅派安装nodejs。
+本工程使用nodejs开发
 
 ### 配置
 修改./routes/wechat.js中config的定义
